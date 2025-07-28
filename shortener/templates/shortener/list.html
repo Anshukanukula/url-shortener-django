@@ -1,0 +1,19 @@
+<!-- templates/shortener/list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortened URLs</title>
+</head>
+<body>
+    <h1>All Shortened URLs</h1>
+    <ul>
+        {% for url in urls %}
+            <li>
+                <strong>Original:</strong> <a href="{{ url.original_url }}">{{ url.original_url }}</a><br>
+                <strong>Short:</strong> <a href="/shortener/{{ url.short_code }}/">/shortener/{{ url.short_code }}</a><br>
+                <strong>Created:</strong> {{ url.created_at }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
